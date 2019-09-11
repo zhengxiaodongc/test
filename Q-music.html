@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QQ音乐</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/rem.js"></script>
+</head>
+<body>
+<section class="container" id="container">
+  <!--audio 是 h5 新增的标签，用于播放音频；-->
+  <audio src="img/myDream.m4a" id="audio"></audio>
+
+  <!--背景图-->
+  <div class="backgroundImg"></div>
+
+  <!--背景蒙层-->
+  <div class="bg"></div>
+
+  <header class="header" id="header">
+    <img src="img/myDream.jpg" alt="">
+    <div class="song">
+      <p>我的梦</p>
+      <p>张靓颖</p>
+    </div>
+    <a href="javascript:;" class="musicBtn" id="musicBtn"></a>
+  </header>
+
+  <main class="main" id="main">
+    <!--main 一个溢出隐藏的盒子；main 这个盒子的高度应该是动态计算的；为了保证在页面充满一屏的情况下，尾部在页面底部 -->
+    <div class="wrapper">
+      <!--wrapper 里面放的都是歌词，歌词应该是动态绑定的-->
+      <p class="select">一直地一直地往前走</p>
+      <p>一直地一直地往前走</p>
+      <p>一直地一直地往前走</p>
+      <p>一直地一直地往前走</p>
+      <p>一直地一直地往前走</p>
+      <p>一直地一直地往前走</p>
+      <p>一直地一直地往前走</p>
+      <p>一直地一直地往前走</p>
+      <p>一直地一直地往前走</p>
+    </div>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="progress" id="progress">
+      <span class="current">00:00</span>
+      <span class="duration">00:00</span>
+      <div class="probg" id="probg">
+        <div class="already"></div>
+      </div>
+    </div>
+    <a href="javascript:;" class="down" id="down">下载这首音乐</a>
+  </footer>
+<ction>
+
+<script src="js/zepto.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+<ml>

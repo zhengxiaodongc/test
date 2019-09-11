@@ -1,0 +1,160 @@
+html {
+    font-size: 100px;
+    height: 100%; /*如果你的应用要充满一屏幕，html 、body 标签的 height 设为 100%*/
+  }
+  body {
+    height: 100%;
+  }
+  
+  .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .container .backgroundImg, .container .bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+  }
+  
+  .container .backgroundImg {
+    background: url("../img/myDream.jpg");
+    background-size: cover;
+    filter: blur(6px); /*filter 是滤镜属性；blur 是模糊程度*/
+  }
+  
+  .container .bg {
+    background: rgba(0, 0, 0, .3);
+  }
+  
+  /*HEADER*/
+  .container .header {
+    position: relative;
+    padding: .3rem;
+    background: rgba(0, 0, 0, .4);
+  }
+  
+  .container .header img {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  
+  .container .header .song {
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  .header .song p {
+    height: .6rem;
+    line-height: .6rem;
+    color: #fff;
+  }
+  
+  .header .song p:nth-child(1) {
+    font-size: .45rem;
+  }
+  
+  .header .musicBtn {
+    display: block;
+    position: absolute;
+    width: .6rem;
+    height: .6rem;
+    right: .3rem;
+    top: 50%;
+    margin-top: -0.3rem; /*top 50% margin-top 负的高度的一半 让元素在垂直方向上居中*/
+    background: url("../img/music.svg") no-repeat;
+    border-radius: 50%;
+    background-size: 100%;
+  }
+  
+  /*定义关键帧动画，实现旋转*/
+  @keyframes move {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .header .musicBtn.select {
+    animation: move 1s linear 0s infinite;
+  }
+  
+  .container .main {
+    position: relative;
+    height: 8rem; /* main 部分的高度应该是在 js 中动态计算的*/
+    padding: .3rem;
+    overflow: hidden;
+  }
+  
+  .container .main .wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all .5s linear 0s; /* 为了保证歌词移动的时候有过渡效果 */
+  }
+  
+  .main .wrapper p {
+    height: .84rem;
+    line-height: .84rem;
+    text-align: center;
+    color: rgba(255, 255, 255, .5);
+    font-size: .4rem;
+  }
+  
+  .main .wrapper p.select {
+    color: #31c27c;
+  }
+  
+  /*FOOTER*/
+  .footer .progress {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .footer .progress span {
+    position: absolute;
+    color: #fff;
+  }
+  
+  .footer .progress span.current {
+    left: .3rem;
+  }
+  
+  .footer .progress span.duration {
+    right: .3rem;
+  }
+  
+  .footer .progress .probg {
+    width: 65%;
+    margin: .15rem auto;
+    background: rgba(255, 255, 255, .5);
+    height: .04rem;
+  }
+  
+  .progress .probg .already {
+    width: 0; /*这个进度条的宽也不是写死的，而是随着歌曲的播放进度更新的*/
+    height: 100%;
+    background: #31c27c;
+  }
+  
+  .footer .down {
+    display: block;
+    width: 60%;
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    color: #fff;
+    font-size: .4rem;
+    background: url("../img/sprite_play.png") no-repeat .2rem -5.86rem #31c27c;
+    background-size: .8rem 7rem;
+    border-radius: .5rem;
+    margin: auto;
+  }
